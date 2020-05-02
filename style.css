@@ -1,0 +1,331 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'Tajawal', '微軟正黑體', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  line-height: 28px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1 {
+  line-height: 1;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.flexlogo {
+  padding: 16px 20px;
+  position: fixed;
+  left: 10px;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  z-index: 999;
+  background: #222222;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+.logo:hover {
+  transform: translate(0%, 3%) rotate3d(0, 1, 0, 180deg);
+  opacity: 1.0;
+  background-image: url("https://imgur.com/81Sr0t0.png");
+  background-repeat: no-repeat;
+  background-size: 86px 84px;
+  background-position: center;
+}
+.logo:hover img {
+  opacity: 0;
+}
+
+.logo-icon {
+  width: 100px;
+  height: 1000px;
+  margin: 50px;
+  display: flex;
+  color: #DFE0CC;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0.8;
+}
+.logo-icon .logo-line::before {
+  content: "";
+  background: #DFE0CC;
+  width: 1px;
+  height: 1000px;
+  position: absolute;
+  bottom: 20px;
+  left: 60%;
+  opacity: 0.5;
+}
+.logo-icon .logo-line::after {
+  content: "";
+  background: #DFE0CC;
+  width: 1px;
+  height: 1000px;
+  position: absolute;
+  bottom: 20px;
+  left: 0%;
+  opacity: 0.5;
+}
+.logo-icon.logo-icon span:nth-child(2) {
+  width: 200px;
+  margin-bottom: 300px;
+  transform: translateX(-70px) rotate(-90deg);
+}
+
+.header {
+  padding: 16px 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 998;
+}
+.header.mobile {
+  display: block;
+  background: white;
+  height: 80px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+@media all and (min-width: 992px) {
+  .header.mobile {
+    display: none;
+  }
+}
+.header.mobile.open {
+  height: 440px;
+}
+.header.mobile .main-menu {
+  margin-top: 16px;
+}
+.header.mobile .main-menu .main-navigation {
+  max-width: 1420px;
+  margin: auto;
+  background: #ddd;
+}
+.header.mobile .main-menu .main-navigation ul {
+  list-style: none;
+  margin: 0;
+}
+.header.mobile .main-menu .main-navigation ul li {
+  padding: 8px 8px;
+  border-bottom: 1px solid white;
+}
+.header.mobile .main-menu .main-navigation ul li a {
+  margin-left: 20px;
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+  transition: all 0.2s;
+}
+.header.mobile .main-menu .main-navigation ul li:hover a {
+  color: #222222;
+  transform: translateX(8px);
+}
+.header.mobile .menu-icon {
+  width: 32px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header.mobile .menu-icon .menu-line {
+  width: 100%;
+  height: 2px;
+  background: black;
+  border-radius: 1px;
+  display: block;
+  transition: all 0.2s;
+}
+.header.mobile .menu-icon.close-icon span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+.header.mobile .menu-icon.close-icon span:nth-child(2) {
+  display: none;
+}
+.header.mobile .menu-icon.close-icon span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+.header.web {
+  display: block;
+}
+.header.web .main-navigation ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+}
+.header.web .main-navigation ul li a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+.header.web .main-navigation ul li a::before {
+  content: "";
+  background: white;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  bottom: -8px;
+  left: 0%;
+  border-radius: 50%;
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.15, 0.67, 0.43, 0.97);
+  opacity: 0;
+}
+.header.web .main-navigation ul li a::after {
+  content: "";
+  background: white;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  bottom: -8px;
+  right: 0%;
+  border-radius: 50%;
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.15, 0.67, 0.43, 0.97);
+  opacity: 0;
+}
+.header.web .main-navigation ul li:hover a::before {
+  left: 52%;
+  opacity: 1.0;
+}
+.header.web .main-navigation ul li:hover a::after {
+  right: 52%;
+  opacity: 1.0;
+}
+
+.header .container {
+  max-width: 1420px;
+}
+
+.max-1200 {
+  width: 100%;
+  max-width: 1420px;
+}
+
+.hero-section {
+  z-index: 9;
+  padding-top: 200px;
+  left: 30%;
+  position: absolute;
+}
+.hero-section .hero-content {
+  height: 900px;
+}
+.hero-section .hero-content .hero-title {
+  color: white;
+  line-height: 48px;
+  font-size: 24px;
+  font-weight: 300;
+}
+.hero-section .hero-content .hero-title::before {
+  content: "";
+  background: #fff;
+  width: 40px;
+  height: 4px;
+  position: absolute;
+  bottom: 60px;
+  left: 0%;
+}
+.hero-section .hero-content .more-btn {
+  padding: 20px 20px;
+  left: 0px;
+  top: 0;
+  width: 20px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+}
+.hero-section .hero-content .more-btn a {
+  display: block;
+}
+.hero-section .hero-content .more-btn:hover a {
+  color: #65DCE9;
+  transform: translate(-44%, -50%);
+}
+.hero-section .hero-content .more-link {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+.hero-section .hero-content .hero-description {
+  color: white;
+  font-size: 16px;
+  line-height: 24px;
+}
+.hero-section .hero-content .hero-description::before {
+  content: "";
+  background: #65DCE9;
+  width: 150px;
+  height: 1px;
+  position: absolute;
+  bottom: -130px;
+  left: -50%;
+}
+.hero-section .hero-content .hero-description::after {
+  content: "As a Designer";
+  width: 180px;
+  height: 1px;
+  position: absolute;
+  bottom: -120px;
+  margin-left: 50%;
+}
+.hero-section .hero-content .hero-phone-image {
+  width: 280px;
+  height: 425px;
+  background: #eee;
+  margin: 0 auto;
+  display: block;
+}
