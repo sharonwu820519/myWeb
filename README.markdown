@@ -1,4 +1,4 @@
-# fuc*WebGL
+# WebGL
 
 A Pen created on CodePen.io. Original URL: [https://codepen.io/sharonwu820519/pen/mdeBqMb](https://codepen.io/sharonwu820519/pen/mdeBqMb).
 
